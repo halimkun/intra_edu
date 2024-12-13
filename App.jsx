@@ -17,6 +17,7 @@ import { StatusBar } from "expo-status-bar";
 import HomePage from "./src/screens/Home";
 import ProductPage from "./src/screens/Product";
 import HomeTabs from "./src/navigators/HomeTabs";
+import ChevronLeft from "./component/icons/ChevronLeft";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -33,5 +34,44 @@ export default function App() {
       </Stack.Navigator>
       <StatusBar style="auto" />
     </NavigationContainer>
+  );
+}
+
+export function ScreenHome() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="HomeScreen"
+        component={HomePage}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="ProductScreen"
+        component={ProductPage}
+        options={{
+          headerTitle: "Product",
+          // headerRight: () => (
+          //   <TouchableOpacity>
+          //     <Bell width={24} height={24} />
+          //   </TouchableOpacity>
+          // ),
+          // headerRightContainerStyle: {
+          //   marginRight: 20,
+          // },
+          navigationOptions: {
+            headerLeft: () => (
+              <TouchableOpacity
+                onPress={() => navigation.goBack()}
+                style={{ marginLeft: 20 }}
+              >
+                <ChevronLeft width={24} height={24} />
+              </TouchableOpacity>
+            ),
+          },
+        }}
+      />
+    </Stack.Navigator>
   );
 }

@@ -7,42 +7,70 @@ import Bell from "../../component/icons/Bell";
 import Bill from "../screens/Bill";
 import Profile from "../screens/Profile";
 import Cart from "../screens/Cart";
+import HomeIcon from "../../component/icons/Home";
+import BillIcon from "../../component/icons/Bill";
+import ProfileIcon from "../../component/icons/Profile";
+import CartIcon from "../../component/icons/Cart";
+import { ScreenHome } from "../../App";
 
 const Tab = createBottomTabNavigator();
 const HomeTabs = () => {
   return (
     <Tab.Navigator
+      initialRouteName="Home"
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
           switch (route.name) {
             case "Home":
-              iconName = focused ? "bell" : "home-outline";
+              iconName = focused ? (
+                <HomeIcon width={20} height={20} fill="#32277D" />
+              ) : (
+                <HomeIcon width={20} height={20} />
+              );
               break;
             case "Bill":
-              iconName = focused ? "bill" : "bill-outline";
+              iconName = focused ? (
+                <BillIcon width={20} height={20} fill="#32277D" />
+              ) : (
+                <BillIcon width={20} height={20} />
+              );
               break;
             case "Profile":
-              iconName = focused ? "profile" : "profile-outline";
+              iconName = focused ? (
+                <ProfileIcon width={20} height={20} fill="#32277D" />
+              ) : (
+                <ProfileIcon width={20} height={20} />
+              );
               break;
             case "Cart":
-              iconName = focused ? "cart" : "cart-outline";
+              iconName = focused ? (
+                <CartIcon width={20} height={20} fill="#32277D" />
+              ) : (
+                <CartIcon width={20} height={20} />
+              );
               break;
             default:
-              iconName = focused ? "home" : "home-outline";
+              iconName = focused ? (
+                <HomeIcon width={20} height={20} fill="#32277D" />
+              ) : (
+                <HomeIcon width={20} height={20} />
+              );
           }
+          return iconName;
         },
         tabBarShowLabel: false,
         tabBarStyle: styles.tabBarStyle,
         tabBarItemStyle: styles.tabBarItemStyle,
-        tabBarActiveBackgroundColor: "#4335A7",
-        tabBarActiveTintColor: "#fff",
-        tabBarInactiveBackgroundColor: "#D0CCE9",
+        tabBarIconStyle: {
+          width: 40,
+          height: 20,
+        },
       })}
     >
       <Tab.Screen
         name="Home"
-        component={HomePage}
+        component={ScreenHome}
         options={{
           headerShown: false,
         }}
@@ -95,9 +123,8 @@ const styles = {
     elevation: 5,
   },
   tabBarItemStyle: {
-    // paddingVertical: 10,
-    margin: 10,
-    borderRadius: "40%",
+    paddingVertical: 14,
+    width: 40,
   },
 };
 

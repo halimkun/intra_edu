@@ -1,9 +1,9 @@
-import { View, TextInput } from 'react-native';
-import Search from './icons/Search';
+import { View, TextInput } from "react-native";
+import Search from "./icons/Search";
 
 export default function SearchField() {
   return (
-    <View className="bg-neutral-200 px-6 py-2 rounded-full flex flex-row items-center gap-3">
+    <View className="px-6 py-2 rounded-full flex flex-row items-center gap-3">
       {/* icon */}
       <Search width={16} height={19} fill="#717171" />
       <TextInput
@@ -12,5 +12,5 @@ export default function SearchField() {
         placeholderTextColor="#717171"
       />
     </View>
-  )
+  );
 }
