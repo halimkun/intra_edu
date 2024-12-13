@@ -1,11 +1,16 @@
-import "./global.css"
+import React from "react";
+import {
+  SafeAreaView,
+  ScrollView,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
+import Referal from "../../component/icons/Referal";
+import ArrowRight from "../../component/icons/ArrowRight";
+import Bell from "../../component/icons/Bell";
 
-import { ScrollView, Text, View, SafeAreaView, TouchableOpacity  } from 'react-native';
-import Bell from './component/icons/Bell';
-import Referal from './component/icons/Referal';
-import ArrowRight from './component/icons/ArrowRight';
-
-export default function App() {
+export default function HomePage() {
   return (
     <SafeAreaView>
       <ScrollView className="px-4 h-full bg-white">
@@ -19,7 +24,6 @@ export default function App() {
                 <Text className="text-white">Referral</Text>
                 <ArrowRight width={12} height={12} fill="#fff" />
               </TouchableOpacity>
-
               {/* bell icon */}
               <Bell width={17} height={20} />
             </View>
