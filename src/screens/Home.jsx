@@ -1,4 +1,3 @@
-import React from "react";
 import {
   SafeAreaView,
   ScrollView,
@@ -9,22 +8,10 @@ import {
 import Referal from "../../component/icons/Referal";
 import ArrowRight from "../../component/icons/ArrowRight";
 import Bell from "../../component/icons/Bell";
-import "./global.css";
-
-import {
-  ScrollView,
-  Text,
-  View,
-  SafeAreaView,
-  TouchableOpacity,
-} from "react-native";
-import Bell from "./component/icons/Bell";
-import Referal from "./component/icons/Referal";
-import ArrowRight from "./component/icons/ArrowRight";
-import Wallet from "./component/icons/Wallet";
-import SearchField from "./component/SearchField";
-import BestDealSection from "./component/section/BestDealSection";
-import CategorySection from "./component/section/CategoriesSection";
+import BestDealSection from "./../../component/section/BestDealSection";
+import CategorySection from "./../../component/section/CategoriesSection";
+import SearchField from "./../../component/SearchField";
+import Wallet from "../../component/icons/Search";
 
 export default function HomePage() {
   return (
@@ -40,18 +27,9 @@ export default function HomePage() {
                   <Text className="text-white">Referral</Text>
                   <ArrowRight width={12} height={12} fill="#fff" />
                 </TouchableOpacity>
+
                 <Bell width={16} height={19} />
               </View>
-            </View>
-
-            <View className="h-28 bg-primary-500 -bottom-7 rounded-2xl p-4 flex gap-3 border-2 border-indigo-200">
-              <View className="flex gap-3 items-center flex-row">
-                <Wallet width={16} height={16} />
-                <Text className="font-black text-white tracking-wide">
-                  Balance
-                </Text>
-              </View>
-              <Text className="text-3xl font-black text-white">₹ 3.456</Text>
             </View>
 
             <View className="h-28 bg-primary-500 -bottom-7 rounded-2xl p-4 flex gap-3 border-2 border-indigo-200">
