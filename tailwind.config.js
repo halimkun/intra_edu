@@ -5,6 +5,7 @@ module.exports = {
     "./app/**/*.{js,jsx,ts,tsx}",
     "./*.{js,jsx,ts,tsx}",
     "./src/screens/**/*.{js,jsx,ts,tsx}",
+    "./component/**/*.{js,jsx,ts,tsx}",
   ],
   presets: [require("nativewind/preset")],
   theme: {
@@ -36,7 +37,7 @@ module.exports = {
         },
         neutral: {
           100: "#FFFFFF",
-          200: "#F5F5F5",
+          200: "#f5f5f5",
           300: "#E2E2E2",
           400: "#C6C6C6",
           500: "#AAAAAA",
